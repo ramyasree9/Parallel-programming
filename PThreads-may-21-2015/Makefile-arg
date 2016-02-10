@@ -1,0 +1,4 @@
+run: arg-pthread.c
+	gcc -o run arg-pthread.c -lpthread
+clean:
+	rm run 

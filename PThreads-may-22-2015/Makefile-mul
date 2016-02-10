@@ -1,0 +1,5 @@
+
+run: Mat-vec-mul.c
+	gcc -o run Mat-vec-mul.c -lpthread
+clean:
+	rm run 

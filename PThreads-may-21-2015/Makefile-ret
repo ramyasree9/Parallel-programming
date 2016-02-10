@@ -1,0 +1,5 @@
+
+run: ret-pthread.c
+	gcc -o run ret-pthread.c -lpthread
+clean:
+	rm run 

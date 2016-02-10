@@ -1,0 +1,4 @@
+run: sum-pthread.c
+	gcc -o run sum-pthread.c -lpthread
+clean:
+	rm run 

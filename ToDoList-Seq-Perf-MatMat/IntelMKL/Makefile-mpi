@@ -1,0 +1,8 @@
+include ./../../Project-Intel-MKL-cpu-Mflops-DGEMM-v0.2/Make.inc
+
+fire : Mat-vec-mul-mpi.o
+	mpicc -o fire Mat-vec-mul-mpi.o -L$(CBLAS_LIB) $(CBLAS_FLAGS)
+Mat-vec-mul-mpi.o: Mat-vec-mul-mpi.c
+	mpicc -c $(CCFLAGS) -DMKL_ILP64 -I$(CBLAS_INCLUDE) Mat-vec-mul-mpi.c 
+clean:
+	rm fire Mat-vec-mul-mpi.o

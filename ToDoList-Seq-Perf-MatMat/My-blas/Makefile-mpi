@@ -1,0 +1,8 @@
+include ./../../BLAS/CBLAS/Makefile.in
+Path=/home/ramyab/BLAS/CBLAS/include/
+all:fire
+fire: Mat-vec-mul-mpi.c
+	mpicc -c $(CFLAGS) -I$(Path) Mat-vec-mul-mpi.c
+	mpif77 -o fire Mat-vec-mul-mpi.o $(CBLIB) $(BLLIB)
+clean: 
+	rm fire Mat-vec-mul-mpi.o

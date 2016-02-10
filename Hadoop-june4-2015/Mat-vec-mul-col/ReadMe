@@ -1,0 +1,44 @@
+
+		 R E A D M E  F I L E 
+                   HADOOP-2.2.0)
+
+# The following commands are required to compile and 
+# execute hadoop map-reduce codes based on hadoop-2.2.0 
+# version on linux (CentOS) system
+
+# Source Code  :  WordCount.java
+# Input file : wordinput.txt 
+# Folder : test ( After compilation of a HMR program, 
+#                  .class files will be stored)   
+# Output Folder :  The directory  "output" is created in "HDFS"
+# To access : hadoop fs -ls <enter>
+# Display information abour environment, input, out puts etc..
+# For subsequent compilation and execution of any HMR program,
+# the folder "output" should be deleted Otherwise the 
+# execution is terminated with error message.
+# Deletion of folder <outpuT> hadoop fs -rmr output 
+
+# Note : You've to execute the following <shell script files>
+# in an order fashion.
+
+#------------------- First Step : Compilation -------------------
+#..................Shell file :compilation.sh -------------------
+
+javac -classpath $HADOOP_JAR_FILES/common/hadoop-common-2.2.0.jar:$HADOOP_JAR_FILES/mapreduce/hadoop-mapreduce-client-core-2.2.0.jar:$HADOOP_JAR_FILES/common/lib/commons-cli-1.2.jar -d test/ Mat-vect-mul-col.java  -Xlint:deprecation 
+
+
+#------------------- Second Step : Creat jar file  ----------------
+#..................Shell file :   create_jar.sh -------------------
+
+ jar -cvf Mat-vect-mul-col.jar -C test/ .
+
+#------------------- Third Step : Wirte input file to HDFS  ------------
+#..................Shell file : input_write_to_HDFS.sh -----------------
+
+hadoop fs -put Input-mat-vect-mul-col.txt Input-to-mat-vect-mul-col.txt
+
+
+#------------------- Fourth Step : Execution   ----------------
+#..................Shell file : execute.sh -------------------
+ 
+hadoop jar Mat-vect-mul-col.jar Mat-vect-mul-col input-to-mat-vect-mul-col.txt output-col output-mat-vect-mul-col matrix_rows

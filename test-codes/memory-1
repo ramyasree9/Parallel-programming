@@ -1,0 +1,9 @@
+
+   /*  ..........Memory Allocation by all the process .........*/
+    Input = (int *) malloc (NoofElements*sizeof(int));
+	 if(Input == NULL) 
+        {
+	 printf("Error : Can not allocate memory \n");
+         input_validity = 0;
+    }
+  }

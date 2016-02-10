@@ -1,0 +1,5 @@
+
+run: join-pthread.c
+	gcc -o run join-pthread.c -lpthread
+clean:
+	rm run 

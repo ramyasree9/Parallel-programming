@@ -1,0 +1,9 @@
+LIBDIR 	= /opt/atlas/lib/
+INCDIR  = /opt/ATLAS/include/
+SRC = Mat-vec-mul-mpi.c
+
+run : $(SRC)
+	mpicc  -o run  $(SRC) -I$(INCDIR) $(LIBDIR)liblapack.a $(LIBDIR)libcblas.a $(LIBDIR)libf77blas.a $(LIBDIR)libatlas.a
+clean:
+	rm run 
+

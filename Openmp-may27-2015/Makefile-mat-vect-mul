@@ -1,0 +1,5 @@
+
+run: Mat-vect-mul.c
+	gcc -o run -fopenmp Mat-vect-mul.c
+clean:
+	rm run 

@@ -1,0 +1,6 @@
+run: Hello.o
+	mpicc -o run Hello.o
+Hello.o: Hello.c
+	mpicc -c Hello.c
+clean: 
+	rm run Hello.o

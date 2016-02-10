@@ -1,0 +1,52 @@
+#
+# *******************************************************************
+#		 C-DAC Tech Workshop PEMG-2010 
+#		     June 21 - 24, 2010
+#
+# *******************************************************************
+#   Modified            : April 2010
+#   Created             : May 2008
+#                         National PARAM Supercomputing Facility
+#
+# *******************************************************************
+
+ALL: default
+##### User configurable options #####
+
+SHELL       = /bin/sh
+ARCH        = 
+COMM        = 
+
+
+CC          = mpicc
+CLINKER     = $(CC)
+
+
+MPILIB     = 
+LIBS       = -lsocket -lnsl -lm
+
+OPTFLAGS    = 
+
+### End User configurable options ###
+
+EXECS	  =  hello_world_master hello_world_slave
+
+OBJECTS1 = hello_world_master.o
+OBJECTS2 = hello_world_slave.o
+#OBJECTS1 = mm_mult_master_sschd.o
+#OBJECTS2 = mm_mult_slave_sschd.o
+
+default: $(EXECS)
+
+master_c: $(OBJECTS1) 
+	$(CLINKER) $(OPTFLAGS) -o hello_world_master $(OBJECTS1) $(LIBS) $(MPILIB)
+slave_c:  $(OBJECTS2) 
+	$(CLINKER) $(OPTFLAGS) -o hello_world_slave $(OBJECTS2) $(LIBS) $(MPILIB)
+
+
+.c.o:
+	$(CC) -c $*.c
+
+
+clean : 
+	$(RM) *.o core hello_world_master hello_world_slave 

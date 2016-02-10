@@ -1,0 +1,5 @@
+
+run: pthread-affinity.c
+	gcc -o run pthread-affinity.c -lpthread
+clean:
+	rm run 

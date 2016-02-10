@@ -1,0 +1,5 @@
+
+run: Ordered.c
+	gcc -o run -fopenmp Ordered.c
+clean:
+	rm run 

@@ -1,0 +1,56 @@
+#
+# *******************************************************************
+#		 C-DAC Tech Workshop PEMG-2010 
+#		     June 21 - 24, 2010
+#
+# *******************************************************************
+#   Modified            : April 2010
+#   Created             : May 2008
+#                         National PARAM Supercomputing Facility
+#
+# *******************************************************************
+
+ALL: default
+##### User configurable options #####
+
+SHELL     = /bin/sh
+ARCH      = 
+COMM      = 
+
+
+CC          = mpicc
+OPTFLAGS    = 
+
+### End User configurable options ###
+
+EXECS      =  run
+
+default: $(EXECS)
+
+all  : run
+
+#For DAY-1 examples only......
+
+OBJECTS = hello_world.o
+#OBJECTS = sum_pt_to_pt.o
+#OBJECTS = sum_linear_array_topology.o
+#OBJECTS = sum_ring_topology.o
+#OBJECTS = sum_associative_fanin_blocking_tree.o
+#OBJECTS = sum_associative_fanin_nonblocking_tree.o               
+#OBJECTS = pie_pt_to_pt.o
+#OBJECTS = reduce.o
+#OBJECTS = scatter.o
+#OBJECTS = allgather.o
+#OBJECTS = pie_collective.o
+#OBJECTS = diag_comm.o
+
+run: $(OBJECTS)
+	$(CC) -o run $(OBJECTS) -lm 
+
+.c.o:
+	$(CC) -c $<
+
+	
+clean: 
+	\rm -f *.o run
+

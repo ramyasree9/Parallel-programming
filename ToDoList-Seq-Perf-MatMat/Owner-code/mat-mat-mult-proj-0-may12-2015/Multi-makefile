@@ -1,0 +1,13 @@
+objects            = inputc.o input-matrixc.o input-vectorc.o initc.o multic.o Mat-vect-mult.o
+
+run : $(objects)
+	cc -o run $(objects)
+inputc.o           : input.h
+input-matrixc.o    : input-matrix.h
+input-vectorc.c    : input-vector.h
+initc.o            : init.h
+multic.o 	   : multi.h
+Mat-vect-mult.o    : input.h input-matrix.h input-vector.h init.h multi.h 
+
+clean:           
+	rm run $(objects)

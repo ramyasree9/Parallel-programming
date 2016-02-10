@@ -1,0 +1,5 @@
+
+run: pthread-min.c
+	gcc -o run pthread-min.c -lpthread
+clean:
+	rm run 

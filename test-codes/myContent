@@ -1,0 +1,10 @@
+total 68
+-rwxrwxrwx 1 ramyab ramyab  5083 May 11 15:00 vv_mult_blkstp_unf.c*
+-rwxr-xr-x 1 ramyab ramyab   240 May 11 15:03 memory-1*
+-rwxrwxrwx 1 ramyab ramyab   919 May 11 15:26 pgm1.c*
+-rwxrwxrwx 1 ramyab ramyab 10460 May 11 19:11 mpi-c-sample-sort.c*
+-rwxrwxrwx 1 ramyab ramyab  4310 May 12 12:20 cpu-multicore-dgemm.c*
+-rwxrwxrwx 1 ramyab ramyab  5953 May 14 09:59 mv_mult_mult_blkstrip.c*
+-rwxrwxrwx 1 ramyab ramyab 13276 May 14 14:35 mm_mult_cartesian.c*
+-rwxr-xr-x 1 ramyab ramyab  8045 May 15 12:26 a.out*
+-rw-r--r-- 1 ramyab ramyab     0 May 15 12:29 myContent

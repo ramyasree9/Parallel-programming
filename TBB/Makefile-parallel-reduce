@@ -1,0 +1,5 @@
+
+run:parallel_reduce.cpp
+	g++ -o run parallel_reduce.cpp -ltbb
+clean:
+	rm run 

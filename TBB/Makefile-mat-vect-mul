@@ -1,0 +1,5 @@
+
+run:Mat-vect-mul.cpp
+	g++ -o run Mat-vect-mul.cpp -ltbb
+clean:
+	rm run 

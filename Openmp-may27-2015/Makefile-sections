@@ -1,0 +1,5 @@
+
+run: Sections.c
+	gcc -o run -fopenmp Sections.c
+clean:
+	rm run 

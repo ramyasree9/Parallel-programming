@@ -1,0 +1,5 @@
+
+run: Parallel.c
+	gcc -o run -fopenmp Parallel.c
+clean:
+	rm run 
